@@ -1,0 +1,13 @@
+Package: ssimf
+Title: Statistical Significance For IMF From EEMD
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Cristiano", "Santos", email = "cristiano1br@gmail.com", role = "cre"),
+    person("Zhaohua", "Wu", email = "zhwu@cola.iges.org", role = "aut"))
+Description: Provides a set of functions for assigning statistical significance of information content for IMF components from any noisy data using the empirical mode decomposition method (EEMD).
+Depends:
+    R (>= 3.3.1)
+License: file LICENSE
+LazyData: true
+RoxygenNote: 5.0.1
+Imports: RcppOctave

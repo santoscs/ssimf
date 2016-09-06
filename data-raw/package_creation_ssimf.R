@@ -8,7 +8,7 @@ devtools::setup(rstudio = FALSE)
 
 #preencher o DESCRIPTION
 
-# crie a pasta \inst e salve o arquivo octave
+# crie a pasta \inst e salve o arquivo octa
 
 
 # cria pasta para dados brutos
@@ -20,55 +20,37 @@ devtools::use_data_raw()
 devtools::use_build_ignore("data-raw")
 
 # Ignora Rproj do Rstudio
-devtools::use_build_ignore("deemd.Rproj")
+devtools::use_build_ignore("ssimf.Rproj")
 
 #Escrevas as funcoes e salve em R
 
 # documenta as funcoes
 devtools::document()
 
-# testa o pacote, provavelmente recebera um erro de 
-# dependencia
-devtools::check()
-
 # coloca as dependencias no pacote
-devtools::use_package("EMD")
-devtools::use_package("Rlibeemd")
+devtools::use_package("RcppOctave")
 
-# teste o pacote novamente
+# testa o pacote, provavelmente recebera um erro
 devtools::check()
 
 # corriga os possiveis erros ou adivertencias apontados 
+
+# teste o pacote novamente apos correcao dos erros
+devtools::document()
+devtools::check()
+
+
+
 ## corrige os acentos
 tools::showNonASCII(readLines("R/deemd.R"))
-
 
 # teste o pacote novamente
 devtools::check()
 
-# dados de maneira externa no pacote
-devtools::use_data_raw()
-
-#Adding `data-raw` to `.Rbuildignore`
-devtools::use_build_ignore("data-raw")
-# salve os dados brutos nesta pasta juntamente com
-# o codigo para obter os dados transformados
-
-
-# cria um vignette que reproduz os resultados
-devtools::use_vignette("nimcno-brasil")
-
-## instala o pacote 
-# vrifica por erros
-devtools::document()
-devtools::check()
 # instala
 devtools::install()
-
 
 # apenas carrega o pacote
 devtools::load_all()
 
-
-# Teste do pacote
 

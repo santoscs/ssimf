@@ -538,9 +538,10 @@ end
 % contact
 %   zwu@fsu.edu
 %
-function [sigline] = criticalvalue(n, percenta)
+function [sigline] = criticalvalue(imfs, percenta)
 
-nDof = n;
+nDof = length(imfs(:,1));
+
 pdMax = fix(log(nDof))+1;
 
 pdIntv = linspace(1,pdMax,100);

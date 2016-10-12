@@ -10,4 +10,10 @@ Depends:
 License: file LICENSE
 LazyData: true
 RoxygenNote: 5.0.1
-Imports: RcppOctave
+Imports: Rlibeemd,
+    matlab,
+    ggplot2,
+    zoo,
+    utils,
+    pracma
+Suggests: RcppOctave

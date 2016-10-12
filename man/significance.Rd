@@ -2,35 +2,21 @@
 % Please edit documentation in R/ssimf.R
 \name{significance}
 \alias{significance}
-\title{Significance}
+\title{statistic significance test for imf}
 \usage{
-significance(imfs, percenta)
+significance(demd, alpha = 0.05)
 }
 \arguments{
-\item{imfs}{the true IMFs from running EMD code. The first IMF must
-be included for it is used to obtain the relative mean
-energy for other IMFs. The trend is not included.}
+\item{demd}{Time series object of class "mts" where 
+series corresponds to IMFs of the input signal, with 
+the last series being the final residual}
 
-\item{percenta}{a parameter having a value between 0.0 ~ 1.0, e.g., 0.05 
-represents 95#' confidence level (upper bound); and 0.95 
-represents 5#' confidence level (lower bound)}
+\item{alpha}{significance level, default 0.05}
 }
 \value{
-\item{sigline}{a two column matrix, with the first column the natural
-                logarithm of mean period, and the second column the
-                natural logarithm of mean energy for significance line}
-         \item{logep}{a two colum matrix, with the first column the natural
-                logarithm of mean period, and the second column the
-                natural logarithm of mean energy for all IMFs}
+A list with class attribute 'ssimf' holding the following elements:
 }
 \description{
-that is used to obtain the "percenta" line based on Wu and Huang (2004).
-}
-\details{
-For this program to work well, the minimum data length is 36
-}
-\references{
-Wu, Z., and N. E Huang (2008). Ensemble Empirical Mode Decomposition: a noise-assisted data analysis method.
-Advances in Adaptive Data Analysis. Vol.1, No.1. 1-41.
+statistic significance test for imf
 }
 

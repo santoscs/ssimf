@@ -27,30 +27,22 @@ devtools::use_build_ignore("ssimf.Rproj")
 # documenta as funcoes
 devtools::document()
 
-# coloca as dependencias no pacote
-devtools::use_package("RcppOctave")
-
 # testa o pacote, provavelmente recebera um erro
 devtools::check()
 
 # corriga os possiveis erros ou adivertencias apontados 
 
+# coloca as dependencias no pacote
+devtools::use_package("RcppOctave", type = "suggests")
+devtools::use_package("Rlibeemd")
+devtools::use_package("matlab")
+devtools::use_package("zoo")
+devtools::use_package("utils")
+devtools::use_package("ggplot2")
+devtools::use_package("pracma")
+
 # teste o pacote novamente apos correcao dos erros
 devtools::document()
 devtools::check()
-
-
-
-## corrige os acentos
-tools::showNonASCII(readLines("R/deemd.R"))
-
-# teste o pacote novamente
-devtools::check()
-
-# instala
-devtools::install()
-
-# apenas carrega o pacote
-devtools::load_all()
 
 

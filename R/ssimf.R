@@ -15,9 +15,9 @@
 #' @return omega: instantanesous frequency, which is 2*PI/T, where T
 #' is the period of an ascillation
 #'
-#' @references Wu, Z., and N. E Huang (2008). Ensemble Empirical Mode Decomposition: a noise-assisted data analysis method.
-#' Advances in Adaptive Data Analysis. Vol.1, No.1. 1-41.  
-#' 
+#' @references Wu, Z., & Huang, N. (2004). A study of the characteristics of white noise using the 
+#' empirical mode decomposition method. Proceedings of the Royal Society of London. Series A: Mathematical, 
+#' Physical and Engineering Sciences, 460(2046), 1597–1611. https://doi.org/10.1098/rspa.2003.1221 
 #' 
 #' @export
 #'
@@ -136,9 +136,10 @@ ifndq <- function(vimf, dt){
 #' @details EMD uses Cubic Spline to be the Maximun and Minimum Envelope for
 #' the data.Besides finding spline,end points should be noticed.
 #'
-#' @references Wu, Z., and N. E Huang (2008). Ensemble Empirical Mode Decomposition: a noise-assisted data analysis method.
-#' Advances in Adaptive Data Analysis. Vol.1, No.1. 1-41.  
-#' 
+#' @references Wu, Z., & Huang, N. (2004). A study of the characteristics of white noise using the 
+#' empirical mode decomposition method. Proceedings of the Royal Society of London. Series A: Mathematical, 
+#' Physical and Engineering Sciences, 460(2046), 1597–1611. https://doi.org/10.1098/rspa.2003.1221 
+#'  
 #' @export
 #' 
 
@@ -168,8 +169,9 @@ extrema <- function(in_data){
 #'                 logarithm of mean period, and the second column the
 #'                 natural logarithm of mean energy for all IMFs}
 #'
-#' @references Wu, Z., and N. E Huang (2008). Ensemble Empirical Mode Decomposition: a noise-assisted data analysis method.
-#' Advances in Adaptive Data Analysis. Vol.1, No.1. 1-41.  
+#' @references Wu, Z., & Huang, N. (2004). A study of the characteristics of white noise using the 
+#' empirical mode decomposition method. Proceedings of the Royal Society of London. Series A: Mathematical, 
+#' Physical and Engineering Sciences, 460(2046), 1597–1611. https://doi.org/10.1098/rspa.2003.1221 
 #' 
 #' 
 #' 
@@ -230,9 +232,12 @@ statistic <- function(imfs){
 #' logarithm of mean period, and the second column the
 #' natural logarithm of mean energy for significance line
 #' 
-#' @references Wu, Z., and N. E Huang (2008). Ensemble Empirical Mode Decomposition: a noise-assisted data analysis method.
-#' Advances in Adaptive Data Analysis. Vol.1, No.1. 1-41.
+#' @references Wu, Z., & Huang, N. (2004). A study of the characteristics of white noise using the 
+#' empirical mode decomposition method. Proceedings of the Royal Society of London. Series A: Mathematical, 
+#' Physical and Engineering Sciences, 460(2046), 1597–1611. https://doi.org/10.1098/rspa.2003.1221 
 #'
+#' @references 
+#' 
 #' @export
 #'
 
@@ -298,8 +303,11 @@ criticalvalue <- function(imfs, percenta){
 #' within the mean value of y(y-bar) of a chi-square distribution
 #' here main job is calculating equation(3.4)--PDF formula from the reference paper
 #' 
-#' @references Wu, Z., and N. E Huang (2008). Ensemble Empirical Mode Decomposition: a noise-assisted data analysis method.
-#' Advances in Adaptive Data Analysis. Vol.1, No.1. 1-41.
+#' @references Wu, Z., & Huang, N. (2004). A study of the characteristics of white noise using the 
+#' empirical mode decomposition method. Proceedings of the Royal Society of London. Series A: Mathematical, 
+#' Physical and Engineering Sciences, 460(2046), 1597–1611. https://doi.org/10.1098/rspa.2003.1221 
+#' 
+#' 
 #' 
 #' @export
 
@@ -337,6 +345,20 @@ dist_value <- function(yPos, yBar, nDof){
 #' @param alpha significance level, default 0.05 
 #'   
 #' @return A list with class attribute 'ssimf' holding the following elements:
+#' \itemize{
+#' \item{\code{signal}}{The input signal.}
+#' \item{\code{noise}}{The extracted noise.}
+#' \item{\code{denoise}}{The input signal without the extracted noise.}
+#' \item{\code{sele}}{Non-significant IMFs.}
+#' \item{\code{id}}{Index of all MFIs.}
+#' \item{\code{stat}}{a two colum matrix, with the first column the natural
+#'                 logarithm of mean period, and the second column the
+#'                 natural logarithm of mean energy for all IMFs}
+#' \item{\code{cv.lower}}{critical value (lower bound)}
+#' \item{\code{cv.upper}}{critial value (upper bound)}
+#' \item{\code{demd}}{IMFs of the input signal, with 
+#' the last series being the final residual}
+#' }
 #' 
 #' 
 #' @importFrom utils tail
@@ -378,7 +400,9 @@ significance <- function(demd, alpha = 0.05){
 #'
 #' @return plot significance graph. Shaded area isn't significance.
 #' 
-#' @import ggplot2
+#' @import ggplot2 
+#' 
+#' @importFrom ggplot2 autoplot
 #' 
 #' @export
 

@@ -1,4 +1,7 @@
 # ssimf
 Statistical significance for IMF  from EEMD
 
-Reference: Wu, Z., and N. E Huang (2008). Ensemble Empirical Mode Decomposition: a noise-assisted data analysis method. Advances in Adaptive Data Analysis. Vol.1, No.1. 1-41.
+Reference: Wu, Z., & Huang, N. (2004). A study of the characteristics of white noise using the empirical mode decomposition method. Proceedings of the Royal Society of London. Series A: Mathematical, Physical and Engineering Sciences, 460(2046), 1597–1611. https://doi.org/10.1098/rspa.2003.1221 
+
+
+
